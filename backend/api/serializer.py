@@ -19,6 +19,7 @@ class CharacteristicSerializer(serializers.ModelSerializer):
 
 
 class FootballClubSerializer(serializers.ModelSerializer):
+    league_details = LeagueSerializer(source='league', read_only=True)
     class Meta:
         model = FootballClubs
         fields = "__all__"
